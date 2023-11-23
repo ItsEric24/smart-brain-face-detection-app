@@ -11,11 +11,14 @@ function Register({ onSubmit, loadUser }) {
     e.preventDefault();
     const user = { username, email, password };
 
-    const response = await fetch("http://localhost:5000/register", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(user),
-    });
+    const response = await fetch(
+      "https://smartbrain-server-47rr.onrender.com/register",
+      {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user),
+      }
+    );
 
     const data = await response.json();
 

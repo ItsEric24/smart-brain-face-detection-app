@@ -10,11 +10,14 @@ function SignIn({ onSubmit, onRouteChange, loadUser }) {
     e.preventDefault();
     const user = { email, password };
     try {
-      const response = await fetch("http://localhost:5000/signin", {
-        method: "post",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(user),
-      });
+      const response = await fetch(
+        "https://smartbrain-server-47rr.onrender.com/signin",
+        {
+          method: "post",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(user),
+        }
+      );
       const data = await response.json();
 
       if (data[0].id) {
